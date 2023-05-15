@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.rcdb.net/cinefile" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.rcdb.net/cinefile">
+
+    <complexType name="productType">
+    	<sequence minOccurs="1" maxOccurs="1">
+    		<element name="title" type="string" minOccurs="1" maxOccurs="1">
+    			<annotation>
+    				<documentation>Title of the product.</documentation>
+    			</annotation></element>
+    		<element name="studio" type="string" minOccurs="1" maxOccurs="unbounded">
+    			<annotation>
+    				<documentation>Studio(s) that released the product.</documentation>
+    			</annotation></element>
+    		<element name="released" type="string" minOccurs="1" maxOccurs="1">
+    			<annotation>
+    				<documentation>The original release date for the product.</documentation>
+    			</annotation></element>
+    		<element name="contributors" type="tns:contributorsType" minOccurs="0" maxOccurs="1">
+    			<annotation>
+    				<documentation>Contributors to the product.</documentation>
+    			</annotation></element>
+    		<element name="music" type="tns:musicType">
+    			<annotation>
+    				<documentation>Music associated with the product.</documentation>
+    			</annotation></element>
+    		<element name="movie_facts" type="tns:movieFactsType">
+    			<annotation>
+    				<documentation>General information and trivia associated with the product.</documentation>
+    			</annotation></element>
+    		<element name="events" type="tns:eventsType">
+    			<annotation>
+    				<documentation>Event timeline to reference contributors, music and movie_facts throughout the product.</documentation>
+    			</annotation></element>
+    	</sequence>
+    	<attribute name="id" type="long">
+    		<annotation>
+    			<documentation>The Gracenote identifier for the product.</documentation>
+    		</annotation></attribute>
+    	<attribute name="type" type="token">
+    		<annotation>
+    			<documentation>The type of product.</documentation>
+    		</annotation></attribute>
+    	<attribute name="lang" type="language">
+    		<annotation>
+    			<documentation>The language that the cinefile information is being distributed in for this product.</documentation>
+    		</annotation></attribute>
+    </complexType>
+
+    <complexType name="contributorsType">
+        <annotation>
+        	<documentation>Contributors to the product.</documentation></annotation>
+        <sequence>
+    		<element name="contributor" type="tns:contributorType" minOccurs="0" maxOccurs="unbounded">
+    			<annotation>
+    				<documentation>A list of contributors for the given product.  If a contributor plays multiple characters and/or has multiple roles within a product, the contributor will appear multiple times.</documentation>
+    			</annotation></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="contributorType">
+    	<sequence>
+    		<element name="name" type="string" minOccurs="1" maxOccurs="1">
+    			<annotation>
+    				<documentation>Name of the contributor.</documentation>
+    			</annotation></element>
+    		<element name="role" type="string" minOccurs="1" maxOccurs="1">
+    			<annotation>
+    				<documentation>Role the contributor plays in the product.</documentation>
+    			</annotation></element>
+    		<element name="character_name" type="string" minOccurs="0" maxOccurs="1">
+    			<annotation>
+    				<documentation>Character name of the contributor (if an actor role).</documentation>
+    			</annotation></element>
+    		<element name="billing_order" type="int" minOccurs="0" maxOccurs="1">
+    			<annotation>
+    				<documentation>Order in which the contributor appears in the billing sequence.</documentation>
+    			</annotation></element>
+    		<element name="filmography" type="tns:filmographyType" minOccurs="0" maxOccurs="1">
+    			<annotation>
+    				<documentation>Additional works that are associated with the contributor.</documentation>
+    			</annotation></element>
+    	</sequence>
+    	<attribute name="id" type="long">
+    		<annotation>
+    			<documentation>The GraceNote identifier for the contributor.  Internally referenced by the eventType.</documentation>
+    		</annotation></attribute>
+    </complexType>
+
+    <element name="cinefile" type="tns:cinefileType">
+    	<annotation>
+    		<documentation>Container for products with cinefile information. </documentation>
+    	</annotation></element>
+
+    <complexType name="musicType">
+        <annotation>
+        	<documentation>Music associated with the product.</documentation></annotation>
+        <sequence>
+    		<element name="track" type="tns:trackType" minOccurs="0" maxOccurs="unbounded">
+    			<annotation>
+    				<documentation>Music tracks associated with the product.</documentation>
+    			</annotation></element>
+    	</sequence>
+    </complexType>
+    
+    
+    <complexType name="trackType">
+        <annotation>
+        	<documentation>An individual track associated with the product.</documentation>
+        </annotation>
+        <sequence>
+    		<element name="title" type="string">
+    			<annotation>
+    				<documentation>The name of the track.</documentation>
+    			</annotation></element>
+    		<element name="album" type="string">
+    			<annotation>
+    				<documentation>The album the track comes from.</documentation>
+    			</annotation></element>
+    		<element name="artist" type="string">
+    			<annotation>
+    				<documentation>The artist that performed the track.</documentation>
+    			</annotation></element>
+    		<element name="label" type="string">
+    			<annotation>
+    				<documentation>The label that produced the track.</documentation>
+    			</annotation></element>
+    		<element name="duration" type="long">
+    			<annotation>
+    				<documentation>The duration of the track in seconds.</documentation>
+    			</annotation></element>
+    	</sequence>
+    	<attribute name="id" type="long">
+    		<annotation>
+    			<documentation>The Gracenote ID used to refer to the track.</documentation>
+    		</annotation></attribute>
+    </complexType>
+
+    <complexType name="cinefileType">
+        <annotation>
+        	<documentation>Container for products with cinefile information.</documentation>
+        </annotation>
+        <sequence>
+    		<element name="product" type="tns:productType" minOccurs="0" maxOccurs="unbounded">
+    			<annotation>
+    				<documentation>A container for product related cinefile information.</documentation>
+    			</annotation></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="movieFactsType">
+    	<sequence>
+    		<element name="movie_fact" type="tns:movieFactType" maxOccurs="unbounded" minOccurs="0">
+    			<annotation>
+    				<documentation>A textual description of some fact about the produce (i.e. movie).</documentation>
+    			</annotation></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="movieFactType">
+    	<annotation>
+    		<documentation>General information and trivia associated with the product.</documentation>
+    	</annotation>
+    	<simpleContent>
+    		<extension base="string">
+    			<attribute name="generic" type="boolean">
+    				<annotation>
+    					<documentation>
+    						Specifies if the Movie Fact relates generally to the movie (true) or is event specific
+    						(false)
+    					</documentation>
+    				</annotation>
+    			</attribute>
+    			<attribute name="id" type="long"></attribute>
+    			<attribute name="type">
+                    <annotation>
+                    	<documentation>Indicates the type of movie fact.</documentation>
+                    </annotation>
+                    <simpleType>
+    					<restriction base="string">
+    						<enumeration value="TRIVIA"></enumeration>
+    						<enumeration value="LOCATION"></enumeration>
+    					</restriction>
+    				</simpleType>
+    			</attribute>
+    		</extension>
+    	</simpleContent>
+    </complexType>
+
+    <complexType name="eventsType">
+        <annotation>
+        	<documentation>Event timeline to reference contributors, music and movie_facts throughout the product.</documentation></annotation>
+        <sequence>
+    		<element name="event" type="tns:eventType" minOccurs="0" maxOccurs="unbounded">
+    			<annotation>
+    				<documentation>A collection of events that reference contributors, music, and movie facts as they occur in the product.</documentation>
+    			</annotation></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="eventType">
+    	<sequence>
+    		<element name="reference" type="tns:referenceType" minOccurs="0" maxOccurs="unbounded">
+    			<annotation>
+    				<documentation>A collection of references to contributors, music and movie facts that occur during the specified event.</documentation>
+    			</annotation></element>
+    	</sequence>
+    	<attribute name="id" type="long">
+    		<annotation>
+    			<documentation>A unique identifer for the event.</documentation>
+    		</annotation></attribute>
+    	<attribute name="start" type="long">
+    		<annotation>
+    			<documentation>The event starting time in seconds.</documentation>
+    		</annotation></attribute>
+    	<attribute name="end" type="long">
+    		<annotation>
+    			<documentation>The event end time in seconds.</documentation>
+    		</annotation></attribute>
+    </complexType>
+
+    <complexType name="referenceType">
+        <annotation>
+        	<documentation>A reference to a contributor, music or movie fact associated with the product.</documentation>
+        </annotation>
+        <attribute name="id" type="long">
+    		<annotation>
+    			<documentation>The ID used to refer to the element specified by the type.  (e.g. track with ID=123 or contributor with id=456).</documentation>
+    		</annotation></attribute>
+    	<attribute name="type">
+            <annotation>
+            	<documentation>The type of data being referred to (i.e. contributor, music, movie fact).</documentation>
+            </annotation>
+            <simpleType>
+    			<restriction base="token">
+    				<enumeration value="CONTRIBUTOR"></enumeration>
+    				<enumeration value="TRACK"></enumeration>
+    				<enumeration value="MOVIE_FACT"></enumeration>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    </complexType>
+
+    <complexType name="filmographyType">
+    	<sequence>
+    		<element name="work" type="tns:workType" minOccurs="0" maxOccurs="unbounded">
+    			<annotation>
+    				<documentation>A piece of work associated with a contributor's filmography.</documentation>
+    			</annotation></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="workType">
+    	<sequence>
+    		<element name="title" type="string" minOccurs="1" maxOccurs="1">
+    			<annotation>
+    				<documentation>The title of the work.</documentation>
+    			</annotation></element>
+    		<element name="studio" type="string" minOccurs="0" maxOccurs="unbounded">
+    			<annotation>
+    				<documentation>The name of the studio(s) that produced the work.</documentation>
+    			</annotation></element>
+    		<element name="released" type="date" minOccurs="0" maxOccurs="1">
+    			<annotation>
+    				<documentation>The date the work was originally released.</documentation>
+    			</annotation></element>
+    		<element name="role" type="string" minOccurs="0" maxOccurs="unbounded">
+    			<annotation>
+    				<documentation>The role(s) the contributor had in the work.</documentation>
+    			</annotation></element>
+    	</sequence>
+    	<attribute name="id" type="long">
+    		<annotation>
+    			<documentation>The GraceNote identifier for the work.</documentation>
+    		</annotation></attribute>
+    	<attribute name="type">
+            <annotation>
+            	<documentation>The type of work (e.g. TV, FILM)</documentation>
+            </annotation>
+            <simpleType>
+    			<restriction base="token">
+    				<enumeration value="FILM"></enumeration>
+    				<enumeration value="TV"></enumeration>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    </complexType>
+</schema>

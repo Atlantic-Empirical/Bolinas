@@ -1,0 +1,66 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="APPLICATION_NAME" Type="System.String" Scope="User">
+      <Value Profile="(Default)">RCDb Bolinas</Value>
+    </Setting>
+    <Setting Name="LAST_PROJECT_NAME" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="LAST_VIDEOTS_DIR" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\</Value>
+    </Setting>
+    <Setting Name="LAST_EXPORT_DIR" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\</Value>
+    </Setting>
+    <Setting Name="RECENT_PROJECTS" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="RECENT_PROJECT_COUNT" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="PLAYER_REGION" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="PLAYER_ASPECT_RATIO" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="PLAYER_MENU_LANG" Type="System.String" Scope="User">
+      <Value Profile="(Default)">English</Value>
+    </Setting>
+    <Setting Name="RUN_UPGRADE" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="PROJECT_EXT" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.bol_prj</Value>
+    </Setting>
+    <Setting Name="APPLICATION_NAME_SHORT" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Bolinas</Value>
+    </Setting>
+    <Setting Name="LAST_PROJECT_DIR" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\</Value>
+    </Setting>
+    <Setting Name="LAST_IMPORT_DIR" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\</Value>
+    </Setting>
+    <Setting Name="WINDOW_MAIN_TOP" Type="System.Int16" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="WINDOW_MAIN_LEFT" Type="System.Int16" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="WINDOW_VIEWER_TOP" Type="System.Int16" Scope="User">
+      <Value Profile="(Default)">500</Value>
+    </Setting>
+    <Setting Name="WINDOW_VIEWER_LEFT" Type="System.Int16" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="KEY_GUID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">92A09553-FDD9-4e6b-917B-B1FE2BF9EB59</Value>
+    </Setting>
+    <Setting Name="JUMP_SECONDS" Type="System.UInt16" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

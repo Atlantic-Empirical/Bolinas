@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="EventVizualizer_Control"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="600" Height="200"
+    xmlns:local="clr-namespace:RCDb.Bolinas.Author">
+    <Grid HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="18" />
+            <RowDefinition Height="24" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <Border Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Name="Border1" Width="140" Height="24" VerticalAlignment="Top" BorderThickness="0" CornerRadius="5,0,0,0" BorderBrush="Red">
+           <Label FontSize="14" FontWeight="Bold" Padding="0" HorizontalContentAlignment="Center">EVENT SETS</Label> 
+        </Border>
+
+        <Border Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Name="Border2" Width="Auto" Height="24" VerticalAlignment="Top" BorderThickness="0" CornerRadius="0,5,0,0" BorderBrush="Blue" Margin="0,0,0,0" local:Clip.ToBounds="true">
+            <Canvas x:Name="cvTimeline" HorizontalAlignment="Left" Width="458" Margin="2,0,4,0"/>
+        </Border>
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <ScrollViewer>
+                <StackPanel x:Name="spEventSets" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto">
+
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="0" Grid.RowSpan="2">
+            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,-1,0,0" Name="btnNewSet" Width="55" FontSize="10">New Set</Button>
+            <Button FontSize="10" Margin="56.406,-1,0,0" Name="btnNewEvent" Height="19.3" VerticalAlignment="Top">New Event</Button>
+            <Button FontSize="10" HorizontalAlignment="Left" Margin="1,19.278,0,3.57" Name="btnDeleteSet" Width="55">Del Set</Button>
+            <Button FontSize="10" Margin="57.12,19.278,0.006,3.57" Name="btnTrimCurrentEvent">Trim</Button>
+        </Grid>
+        <ScrollViewer Grid.Row="2" Grid.Column="1" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Hidden" Name="svHorizontal">
+            <Grid Grid.Row="1" Background="AliceBlue" HorizontalAlignment="Left" Margin="0,0,4,0"  x:Name="gdEventContainer" />
+        </ScrollViewer>
+        <Border Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" Name="Border3" Height="24" VerticalAlignment="Bottom" BorderThickness="0" CornerRadius="0,0,5,5" BorderBrush="Purple">
+            <Grid>
+                <Label HorizontalAlignment="Right" Margin="0,0,145,-7" Name="lblZoom" Width="38.556" FontSize="10" FontWeight="Bold">100%</Label>
+                <Slider HorizontalAlignment="Right" Margin="0,0,20,0" Name="slZoom" Width="109.956" TickPlacement="TopLeft" Maximum="100" Minimum="0" SmallChange="5" LargeChange="5" TickFrequency="5" Value="50" IsSnapToTickEnabled="True" />
+                <Button HorizontalAlignment="Right" Margin="0,1,2,1" Name="btnZoomIn" Width="15" Padding="0" BorderThickness="0" VerticalContentAlignment="Top">+</Button>
+                <Button BorderThickness="0" HorizontalAlignment="Right" Margin="0,1,132.804,1" Name="btnZoomOut" Padding="0" VerticalContentAlignment="Top" Width="15">-</Button>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

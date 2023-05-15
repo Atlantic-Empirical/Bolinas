@@ -1,0 +1,264 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{28CB72F5-3090-4D1D-9B74-C8FC65B7149A}</ProjectGuid>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RCDb.Bolinas.Author</RootNamespace>
+    <AssemblyName>Bolinas.Author</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <IncrementalBuild>true</IncrementalBuild>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Bolinas.Author.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <IncrementalBuild>false</IncrementalBuild>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Bolinas.Author.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="Application.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="src\Controls\EventSetItem_Control.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Controls\EventVizualizer_Control.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Dialogs\CastEditor_Dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Dialogs\ContributorItemEditor_Dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Dialogs\EventEdit_Dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Dialogs\FactEditor_Dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Dialogs\FactItemEditor_Dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Dialogs\FilmographyItemEditor_Dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Dialogs\ProjectSetup_Dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Dialogs\SceneEditor_Dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Dialogs\SoundtrackItemEditor_Dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Dialogs\TrackEditor_Dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="src\Forms\Main_Form.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Application.xaml.vb">
+      <DependentUpon>Application.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Forms\Main_Form.xaml.vb">
+      <DependentUpon>Main_Form.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="System.Linq" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows" />
+    <Import Include="System.Windows.Controls" />
+    <Import Include="System.Windows.Data" />
+    <Import Include="System.Windows.Documents" />
+    <Import Include="System.Windows.Input" />
+    <Import Include="System.Windows.Shapes" />
+    <Import Include="System.Windows.Media" />
+    <Import Include="System.Windows.Media.Imaging" />
+    <Import Include="System.Windows.Navigation" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWpfExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.WPF.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="src\Controls\EventSetItem_Control.xaml.vb">
+      <DependentUpon>EventSetItem_Control.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Controls\EventVizualizer_Control.xaml.vb">
+      <DependentUpon>EventVizualizer_Control.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Dialogs\Bolinas_SplashScreen.Designer.vb">
+      <DependentUpon>Bolinas_SplashScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="src\Dialogs\Bolinas_SplashScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Dialogs\CastEditor_Dialog.xaml.vb">
+      <DependentUpon>CastEditor_Dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Dialogs\ContributorItemEditor_Dialog.xaml.vb">
+      <DependentUpon>ContributorItemEditor_Dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Dialogs\EventEdit_Dialog.xaml.vb">
+      <DependentUpon>EventEdit_Dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Dialogs\FactEditor_Dialog.xaml.vb">
+      <DependentUpon>FactEditor_Dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Dialogs\FactItemEditor_Dialog.xaml.vb">
+      <DependentUpon>FactItemEditor_Dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Dialogs\FilmographyItemEditor_Dialog.xaml.vb">
+      <DependentUpon>FilmographyItemEditor_Dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Dialogs\ProjectSetup_Dialog.xaml.vb">
+      <DependentUpon>ProjectSetup_Dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Dialogs\SceneEditor_Dialog.xaml.vb">
+      <DependentUpon>SceneEditor_Dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Dialogs\SoundtrackItemEditor_Dialog.xaml.vb">
+      <DependentUpon>SoundtrackItemEditor_Dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Dialogs\TrackEditor_Dialog.xaml.vb">
+      <DependentUpon>TrackEditor_Dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Scrap\ScrapPlayerCode.vb" />
+    <Compile Include="src\Shared\Bolinas_Classes.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Shared\Clip.vb" />
+    <Compile Include="src\Shared\MovieIQ_Classes.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Shared\PredicateWrapper.vb" />
+    <Compile Include="src\Shared\RCDb_Classes.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Shared\XML_shared.vb" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Dialogs\Bolinas_SplashScreen.resx">
+      <DependentUpon>Bolinas_SplashScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="src\Shared\MovieIQ_Diagram.cd" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="src\Shared\RCDb_Diagram.cd" />
+    <EmbeddedResource Include="Resources\XSD\cinefile.xsd" />
+    <EmbeddedResource Include="Resources\XSD\CONTRIBUTORS.xsd" />
+    <EmbeddedResource Include="Resources\XSD\FACTS.xsd" />
+    <EmbeddedResource Include="Resources\XSD\FILMOGRAPHY.xsd" />
+    <EmbeddedResource Include="Resources\XSD\SOUNDTRACK.xsd" />
+    <AppDesigner Include="My Project\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Bolinas_Author_Splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Notes\WishList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SMT.Common 2.0\SMT.Common 2.0.vbproj">
+      <Project>{B76A1EB3-41D7-4033-9815-741E6D95A924}</Project>
+      <Name>SMT.Common 2.0</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMT.Multimedia.Resources\SMT.Multimedia.Resources.vbproj">
+      <Project>{922F7F84-9FF7-4329-BFA1-A823B2639206}</Project>
+      <Name>SMT.Multimedia.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

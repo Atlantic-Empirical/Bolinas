@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="EventSetItem_Control"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="600" Height="24"
+    xmlns:local="clr-namespace:RCDb.Bolinas.Author">
+    <Grid HorizontalAlignment="Stretch" Width="Auto" Margin="1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="LightSteelBlue">
+            <Label Margin="20,3,22,3" Name="lblEventSetName" Padding="0">[]</Label>
+            <Button HorizontalAlignment="Right" Margin="0,2,2,2" Name="btnExpand" Width="14" Padding="0">+</Button>
+            <RadioButton Margin="5,6,0,4" Name="rbSelected" HorizontalAlignment="Left" Width="12"></RadioButton>
+        </Grid>
+        <Grid x:Name="gdBoxParent" HorizontalAlignment="Stretch" Grid.Column="1" Background="AliceBlue" local:Clip.ToBounds="true">
+            <Canvas x:Name="cvBoxParent" Margin="0,0,0,0" AllowDrop="True">
+            </Canvas>
+        </Grid>
+    </Grid>
+</UserControl>
